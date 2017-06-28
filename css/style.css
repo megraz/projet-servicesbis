@@ -1,0 +1,18 @@
+body {
+    background: #bdf5f9;
+    color: #111111;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    padding: 20px;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    width: 50%;
+}
+
+label{
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
