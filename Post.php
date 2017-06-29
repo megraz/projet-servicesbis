@@ -2,23 +2,24 @@
 
 class Post {
 
-    protected $title;
-    protected $categorie;
-    protected $photo;
-    protected $date;
-    protected $description;
-    protected $localisation;
-    protected $price;
+    public $title;
+    public $categorie;
+    public $photo;
+    public $date;
+    public $description;
+    public $localisation;
+    public $price;
 
-    function __construct($title, $categorie, $photo, $date, $description, $localisation, $price) {
+    function __construct($title, $photo, $description, $price) {
         $this->title = $title;
-        $this->categorie = $categorie;
+        //$this->categorie = $categorie;
         $this->photo = $photo;
-        $this->date = $date;
+        $this->date = new DateTime();
         $this->description = $description;
-        $this->localisation = $localisation;
+        //$this->localisation = $localisation;
         $this->price = $price;
     }
+
     
     function getTitle() {
         return $this->title;

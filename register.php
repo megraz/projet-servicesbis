@@ -1,4 +1,5 @@
 <?php
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -6,6 +7,7 @@
  */
 include_once './User.php';
 include_once './DataBase.php';
+
 if (isset($_POST['inscription'])) {
     $post = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
     $user = new DataBase();
@@ -17,3 +19,4 @@ if (isset($_POST['inscription'])) {
     $_SESSION['genre'] = $post['genre'];
     $_SESSION['age'] = $post['age'];
 }
+//On lance la session à l'inscription et on y stock le nom d'utilisateur

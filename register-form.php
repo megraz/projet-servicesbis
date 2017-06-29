@@ -39,7 +39,6 @@
                 <label for="age">Age</label>
                 <input type="number" name="age"/>
                 <br/>
-                <label for="evaluation">Evaluation</label>
                 <input type="submit" name="inscription" value="Valider" />
             </section>
 

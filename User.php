@@ -13,7 +13,7 @@ class User {
     public $annonces;
     
     
-    function __construct($pseudo, $mdp, $nom, $prenom, $mail, $avatar, $genre, $age, $annonces) {
+    function __construct($pseudo, $mdp, $nom, $prenom, $mail, $avatar, $genre, $age ){
         $this->pseudo = $pseudo;
         $this->mdp = $mdp;
         $this->nom = $nom;
@@ -22,7 +22,7 @@ class User {
         $this->avatar = $avatar;
         $this->genre = $genre;
         $this->age = $age;
-        $this->annonces = $annonces;
+        //$this->annonces = $annonces;
     }
 
     function getPseudo() {

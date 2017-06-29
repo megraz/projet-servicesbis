@@ -22,12 +22,17 @@ and open the template in the editor.
             <form action="create-post.php" method="POST">
                 <label for="title">Titre</label>
                 <input type="text" name="title"/>
+                <br/>
                 <label for="description">Description</label>
+                <br/>
                 <textarea cols="50" rows="10" name="description">Vous pouvez écrire quelque chose ici</textarea>
+                <br/>
                 <label for="price">Prix</label>
                 <input type="number" name="price"/> €
+                <br/>
                 <label for="photo">Photo</label>
                 <input type="file"name="photo"/>
+                <br/>
                 <input type="submit" value="Envoyer" name="newpost"/>
             </form>
 

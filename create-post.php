@@ -8,7 +8,7 @@ if (isset($_POST['newpost'])) {
     $newpost->createPost(new Post($post['title'], $post['photo'], $post['description'], $post['price'])) ;
     $newpostdata = unserialize(file_get_contents('posts/' . $post['title'] . '.txt'));
     $instance = new DataBase();
-    echo $instance->afficherPost($newpostdata);
+    echo $instance->affichePost($newpostdata);
     
     
 } else {

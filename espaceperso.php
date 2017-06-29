@@ -15,7 +15,7 @@
             if (is_file('utilisateur/' . $user . '.txt')) {
                 $contenu = unserialize(file_get_contents('utilisateur/' . $user . '.txt'));
                 $instance = new DataBase;
-                echo $instance->afficherUser($contenu);
+                echo $instance->afficheUser($contenu);
                 echo '<button>Créer une nouvelle annonce</button>';
                 echo '<form action="logout.php" method="POST"><button>Se déconnecter</button></form>';
             }

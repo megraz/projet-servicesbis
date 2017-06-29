@@ -71,7 +71,8 @@
                 echo '<div class="text">';
                 $contenu = unserialize(file_get_contents($dossier . $content));
                 $instance = new DataBase();
-                echo $instance->afficherPost($contenu);
+                //var_dump($contenu);
+                echo $instance->affichePost($contenu);
                 echo '</div>';
             }
         }
