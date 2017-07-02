@@ -10,9 +10,9 @@ class Post {
     public $localisation;
     public $price;
 
-    function __construct($title, $photo, $description, $price) {
+    function __construct($title, $photo, $description, $price, $categorie) {
         $this->title = $title;
-        //$this->categorie = $categorie;
+        $this->categorie = $categorie;
         $this->photo = $photo;
         $this->date = new DateTime();
         $this->description = $description;
@@ -20,7 +20,6 @@ class Post {
         $this->price = $price;
     }
 
-    
     function getTitle() {
         return $this->title;
     }
@@ -76,7 +75,5 @@ class Post {
     function setPrice($price) {
         $this->price = $price;
     }
-
-
 
 }

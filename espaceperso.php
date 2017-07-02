@@ -16,8 +16,9 @@
                 $contenu = unserialize(file_get_contents('utilisateur/' . $user . '.txt'));
                 $instance = new DataBase;
                 echo $instance->afficheUser($contenu);
-                echo '<button>Créer une nouvelle annonce</button>';
+                echo '<a href="post_form.php"><button>Créer une nouvelle annonce</button></a><br/>';
                 echo '<form action="logout.php" method="POST"><button>Se déconnecter</button></form>';
+                echo '<a href="index.php">Retour</a>';
             }
         } else {
             echo'

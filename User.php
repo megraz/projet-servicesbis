@@ -1,7 +1,8 @@
 
 <?php
+
 class User {
-    
+
     public $pseudo;
     private $mdp;
     public $nom;
@@ -11,9 +12,8 @@ class User {
     public $genre;
     public $age;
     public $annonces;
-    
-    
-    function __construct($pseudo, $mdp, $nom, $prenom, $mail, $avatar, $genre, $age ){
+
+    function __construct($pseudo, $mdp, $nom, $prenom, $mail, $avatar, $genre, $age) {
         $this->pseudo = $pseudo;
         $this->mdp = $mdp;
         $this->nom = $nom;
@@ -97,5 +97,9 @@ class User {
         $this->annonces = $annonces;
     }
 
+    public function getData() {
+        return $this->mdp;
+    }
+  
 
 }

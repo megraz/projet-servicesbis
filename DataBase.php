@@ -1,17 +1,18 @@
 <?php
-/*class Database (ce que l'on peut mettre dedans):
-    serialize;
-    unserialize
-    fopen
-    fwrite
-    file_get_content
-    scandir
 
-Les choses à ne surtout pas mettre dans la class Database : 
-    $_POST/$_GET
-    echo ''
-    html 
-User :              Evenement :
+/* class Database (ce que l'on peut mettre dedans):
+  serialize;
+  unserialize
+  fopen
+  fwrite
+  file_get_content
+  scandir
+
+  Les choses à ne surtout pas mettre dans la class Database :
+  $_POST/$_GET
+  echo ''
+  html
+  User :              Evenement :
  * Database: 
  * 
  * methode creer User/info user/ creer dossier utilisateur
@@ -19,7 +20,7 @@ User :              Evenement :
  * lire post
  * auth user / autentifier l'utilisateur
  */
-/**CRUD : create, read, update, delete
+/* * CRUD : create, read, update, delete
  * 
  * creer User (argument : instance de User) -> prendre cette instance et 
  * la mettre dans le fichier
@@ -42,31 +43,31 @@ User :              Evenement :
  */
 /* CCL :
  * include_once './Utilisateur.php';
-class Database {
-    
+  class Database {
+
   public function creerUser(Utilisateur $utilisateur){
-        
-     // On verifie si le dossier utilisateur existe dêjà 
-          if(!is_dir("utilisateur")) {
-	        //sinon on le crée
-	        mkdir("utilisateur");
-	    }
-	    //On crée un nouveau fichier pour l'utilisateur
-	    $new_file = fopen("utilisateur/".$utilisateur->getLogin() .".txt", "w");
-           
-	    fwrite($new_file, serialize($utilisateur));
-	    //on ferme le fichier
-	    fclose($new_file);
-	    //On lance la session à l'inscription et on y
-	    //stock le nom d'utilisateur
-	    session_start();
-	    $_SESSION['utilisateur'] = $utilisateur;
-	}
-}
+
+  // On verifie si le dossier utilisateur existe dêjà
+  if(!is_dir("utilisateur")) {
+  //sinon on le crée
+  mkdir("utilisateur");
+  }
+  //On crée un nouveau fichier pour l'utilisateur
+  $new_file = fopen("utilisateur/".$utilisateur->getLogin() .".txt", "w");
+
+  fwrite($new_file, serialize($utilisateur));
+  //on ferme le fichier
+  fclose($new_file);
+  //On lance la session à l'inscription et on y
+  //stock le nom d'utilisateur
+  session_start();
+  $_SESSION['utilisateur'] = $utilisateur;
+  }
+  }
  */
 
 class DataBase {
-    
+
     //creer un nouvel utilisateur
     public function createUser(User $user) {
         // On verifie si le dossier utilisateur existe dêjà 
@@ -80,19 +81,19 @@ class DataBase {
         fwrite($file, $userdata);
         fclose($file);
     }
-    
+
+   
     //afficher  les infos de l'utilisateur
     public function afficheUser(User $user) {
-        return '<pre>Pseudo : ' . $user->getPseudo() . '</pre><pre>'.
+        return '<pre>Pseudo : ' . $user->getPseudo() . '</pre><pre>' .
                 $user->getNom() . '</pre><pre>' .
                 $user->getPrenom() . '</pre><pre>' .
-                $user->getMail() . '</pre><pre><img src="' .
-                $user->getAvatar() . '"></pre><pre>' .
+                $user->getMail() . '</pre><pre>' .
+                $user->getAvatar() . '<img src="</pre><pre>">' .
                 $user->getGenre() . '</pre><pre>' .
                 $user->getAge() . '</pre>';
-        
     }
-    
+
     //creer un post (une annonce)
     public function createPost(Post $post) {
         if (!is_dir('posts')) {
@@ -103,13 +104,23 @@ class DataBase {
         fwrite($file, $postdata);
         fclose($file);
     }
-    
+
     //afficher un post
+      //afficher un post
     public function affichePost(Post $post) {
         return '</pre><pre><img src="' .
                 $post->getPhoto() . '"></pre><pre>' .
                 $post->getDescription() . '</pre><pre>' .
-                $post->getPrice() . '</pre><pre>' ;
+                $post->getPrice() . '</pre><pre>' .
                 //$post->getDate()->format('d/m/y H:i') . '</pre>';
+                $post->getCategorie() . '</pre>';
     }
+
+    //afficher photo Avatar
+    public function afficheAvatar() {
+        $db = new DataBase('mysql:dbname=site;host=localhost', 'root', '');
+        $db->setAttribute(db::ATTR_ERRMODE, db::ERRMODE_EXCEPTION);
+        $db->setAttribute(db::ATTR_DEFAULT_FETCH_MODE, db::FETCH_OBJ);
+    }
+
 }

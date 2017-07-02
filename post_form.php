@@ -27,6 +27,15 @@ and open the template in the editor.
                 <br/>
                 <textarea cols="50" rows="10" name="description">Vous pouvez écrire quelque chose ici</textarea>
                 <br/>
+                <select name="categories">
+                    <option value="toutescategories" selected="selected">Toutes les catégories</option>
+                    <option value="Reparation">Réparation et Dépannage</option>
+                    <option value="Mode">Mode et Bien-être</option>
+                    <option value="Information">Information et conseils</option>
+                    <option value="Demenagements">Déménagements</option>
+                    <option value="Babysitting">Babysitting</option>
+                </select>
+                </br>
                 <label for="price">Prix</label>
                 <input type="number" name="price"/> €
                 <br/>
@@ -47,7 +56,7 @@ and open the template in the editor.
                 <input type="password" name="mdp"/>
                 <input type="submit" name="login"/>
             </form>
-        <a href="register-form.php">S'inscrire</a>
+            <a href="register-form.php">S'inscrire</a>
             <?php
         }
         ?>

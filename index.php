@@ -46,9 +46,9 @@
         ?>
 
         <h1>De quel service avez-vous besoin ?</h1>
-        <form class="recherche">
-            <select>
-                <option value="" selected="">Toutes les catégories</option>
+        <form class="recherche" method="POST" action="index.php">
+            <select name ="ttescategories">
+                <option value="toutescategories" selected="selected">Toutes les catégories</option>
                 <option value="Reparation">Réparation et Dépannage</option>
                 <option value="Mode">Mode et Bien-être</option>
                 <option value="Information">Information et conseils</option>
@@ -63,6 +63,7 @@
         <?php
         include_once './Post.php';
         include_once './DataBase.php';
+        
         $dossier = 'posts/';
         $files = scandir($dossier);
         foreach ($files as $content) {
@@ -75,6 +76,7 @@
                 echo $instance->affichePost($contenu);
                 echo '</div>';
             }
+            
         }
         ?>
     </body>
