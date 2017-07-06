@@ -12,6 +12,7 @@ class User {
     public $genre;
     public $age;
     public $annonces;
+    public $date;
 
     function __construct($pseudo, $mdp, $nom, $prenom, $mail, $avatar, $genre, $age) {
         $this->pseudo = $pseudo;
@@ -22,6 +23,7 @@ class User {
         $this->avatar = $avatar;
         $this->genre = $genre;
         $this->age = $age;
+        $this->date = new DateTime();
         //$this->annonces = $annonces;
     }
 
@@ -61,6 +63,10 @@ class User {
         return $this->annonces;
     }
 
+    function getDate() {
+        return $this->date;
+    }
+
     function setPseudo($pseudo) {
         $this->pseudo = $pseudo;
     }
@@ -97,9 +103,8 @@ class User {
         $this->annonces = $annonces;
     }
 
-    public function getData() {
-        return $this->mdp;
+    function setDate($date) {
+        $this->date = $date;
     }
-  
 
 }

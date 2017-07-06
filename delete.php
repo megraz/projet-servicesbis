@@ -1,5 +1,5 @@
 <?php
-
+/*
 include_once './DataBase.php';
 include_once './Post.php';
 include_once './User.php';
@@ -10,3 +10,4 @@ if (isset($_POST['filename'])) {
     $instance->deletePost($content);
     header("location: espaceperso.php");
 }
+*/

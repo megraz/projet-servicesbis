@@ -9,6 +9,7 @@ class Post {
     public $description;
     public $localisation;
     public $price;
+    public $author;
 
     function __construct($title, $photo, $description, $price, $categorie) {
         $this->title = $title;
@@ -18,6 +19,7 @@ class Post {
         $this->description = $description;
         //$this->localisation = $localisation;
         $this->price = $price;
+        //$this->author = $author->getPseudo();
     }
 
     function getTitle() {
@@ -48,6 +50,10 @@ class Post {
         return $this->price;
     }
 
+    function getAuthor() {
+        return $this->author;
+    }
+
     function setTitle($title) {
         $this->title = $title;
     }
@@ -74,6 +80,10 @@ class Post {
 
     function setPrice($price) {
         $this->price = $price;
+    }
+
+    function setAuthor($author) {
+        $this->author = $author;
     }
 
 }

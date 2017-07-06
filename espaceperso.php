@@ -6,9 +6,14 @@
         <title></title>
     </head>
     <body>
+        <h2>Mon Espace Personnel</h2>
         <?php
-        include_once 'User.php';
-        include_once 'DataBase.php';
+        include_once './User.php';
+        include_once './DataBase.php';
+        include_once './Post.php';
+
+
+        $instance = new DataBase;
         session_start();
         if (isset($_SESSION['nom'])) {
             $user = $_SESSION ['nom'];
@@ -30,6 +35,17 @@
             <input type="submit" name="login"/>
         </form>';
         }
+        ?>
+
+        <h2>Mes Annonces</h2>
+
+
+        <?php
+        include_once './User.php';
+        include_once './DataBase.php';
+        include_once './Post.php';
+        
+        
         ?>
     </body>
 </html>

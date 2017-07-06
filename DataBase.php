@@ -82,7 +82,6 @@ class DataBase {
         fclose($file);
     }
 
-   
     //afficher  les infos de l'utilisateur
     public function afficheUser(User $user) {
         return '<pre>Pseudo : ' . $user->getPseudo() . '</pre><pre>' .
@@ -91,7 +90,8 @@ class DataBase {
                 $user->getMail() . '</pre><pre>' .
                 $user->getAvatar() . '<img src="</pre><pre>">' .
                 $user->getGenre() . '</pre><pre>' .
-                $user->getAge() . '</pre>';
+                $user->getAge() . '</pre>' .
+                $user->getDate()->format('d/m/y H:i') . '<pre></pre>';
     }
 
     //creer un post (une annonce)
@@ -106,12 +106,11 @@ class DataBase {
     }
 
     //afficher un post
-      //afficher un post
     public function affichePost(Post $post) {
         return '</pre><pre><img src="' .
                 $post->getPhoto() . '"></pre><pre>' .
                 $post->getDescription() . '</pre><pre>' .
-                $post->getPrice() . '</pre><pre>' .
+                $post->getPrice() . '€</pre><pre>' .
                 //$post->getDate()->format('d/m/y H:i') . '</pre>';
                 $post->getCategorie() . '</pre>';
     }
