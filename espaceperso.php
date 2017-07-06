@@ -41,11 +41,13 @@
 
 
         <?php
-        include_once './User.php';
-        include_once './DataBase.php';
-        include_once './Post.php';
-        
-        
+        $listeAnnonces = $instance->listePosts();
+        foreach ($listeAnnonces as $annonce) {
+            $author = $annonce->getAuthor();
+            if ($author == $user) {
+                echo $instance->affichePost($annonce);
+            }
+        }
         ?>
     </body>
 </html>

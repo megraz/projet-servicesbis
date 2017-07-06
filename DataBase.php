@@ -37,6 +37,7 @@
  * 
  * $user = unserialize(file_get_contents(...))->on recupere l'instance de user 
  * qu'on avait stocké dans le fichier au moment de l'inscription.
+ * nb.unserialize — Crée une variable PHP à partir d'une valeur linéarisée
  * 
  * if($user->getMdp() == $mdp)-> on compare le mdp stocké dans le fichier 
  * à celui passé en argument de la function .
@@ -112,7 +113,8 @@ class DataBase {
                 $post->getDescription() . '</pre><pre>' .
                 $post->getPrice() . '€</pre><pre>' .
                 //$post->getDate()->format('d/m/y H:i') . '</pre>';
-                $post->getCategorie() . '</pre>';
+                $post->getCategorie() . '</pre><pre>' .
+                $post->getAuthor() . '</pre>';
     }
 
     //afficher photo Avatar
@@ -120,6 +122,30 @@ class DataBase {
         $db = new DataBase('mysql:dbname=site;host=localhost', 'root', '');
         $db->setAttribute(db::ATTR_ERRMODE, db::ERRMODE_EXCEPTION);
         $db->setAttribute(db::ATTR_DEFAULT_FETCH_MODE, db::FETCH_OBJ);
+    }
+
+    public function listeUser(): array {
+        $dossier = './utilisateur/';
+        $files = scandir($dossier);
+        $listeUser = [];
+        foreach ($files as $user) {
+            if (!is_dir($user)) {
+                $listeUser[] = unserialize(file_get_contents($dossier . $user));
+            }
+        }
+        return $listeUser;
+    }
+
+    public function listePosts(): array {
+        $dossier = './posts/';
+        $files = scandir($dossier);
+        $listePosts = [];
+        foreach ($files as $post) {
+            if (!is_dir($post)) {
+                $listePosts[] = unserialize(file_get_contents($dossier . $post));
+            }
+        }
+        return $listePosts;
     }
 
 }

@@ -11,7 +11,7 @@ class Post {
     public $price;
     public $author;
 
-    function __construct($title, $photo, $description, $price, $categorie) {
+    function __construct($title, $photo, $description, $price, $categorie, User $author) {
         $this->title = $title;
         $this->categorie = $categorie;
         $this->photo = $photo;
@@ -19,7 +19,7 @@ class Post {
         $this->description = $description;
         //$this->localisation = $localisation;
         $this->price = $price;
-        //$this->author = $author->getPseudo();
+        $this->author = $author->getPseudo();
     }
 
     function getTitle() {
@@ -85,5 +85,16 @@ class Post {
     function setAuthor($author) {
         $this->author = $author;
     }
+
+    //afficher un post
+  /*  public function affichePost() {
+        return '</pre><pre><img src="' .
+                $this->getPhoto() . '"></pre><pre>' .
+                $this->getDescription() . '</pre><pre>' .
+                $this->getPrice() . '€</pre><pre>' .
+                //$post->getDate()->format('d/m/y H:i') . '</pre>';
+                $this->getCategorie() . '</pre><pre>' .
+                $this->getAuthor() . '</pre>';
+    }*/
 
 }
