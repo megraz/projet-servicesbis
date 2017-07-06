@@ -21,7 +21,7 @@ and open the template in the editor.
 
             <form action="create-post.php" method="POST">
                 <label for="title">Titre</label>
-                <input type="text" name="title"/>
+                <input type="text" name="title" required="required"/>
                 <br/>
                 <label for="description">Description</label>
                 <br/>
@@ -37,10 +37,10 @@ and open the template in the editor.
                 </select>
                 </br>
                 <label for="price">Prix</label>
-                <input type="number" name="price"/> €
+                <input type="number" name="price" required="required"/> €
                 <br/>
                 <label for="photo">Photo</label>
-                <input type="file"name="photo"/>
+                <input type="file"name="photo" required="required"/>
                 <br/>
                 <input type="submit" value="Envoyer" name="newpost"/>
             </form>
