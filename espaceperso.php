@@ -3,6 +3,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         <title></title>
     </head>
     <body>
@@ -46,6 +47,12 @@
             $author = $annonce->getAuthor();
             if ($author == $user) {
                 echo $instance->affichePost($annonce);
+                /*
+                  echo'
+                  <form method="POST" action="delete.php">
+                  <input type="hidden" name="fichier" ' . 'value="' . $annonce->getTitle . '"/>
+                  <input type="submit" value="supprimer">
+                  </form>'; */
             }
         }
         ?>

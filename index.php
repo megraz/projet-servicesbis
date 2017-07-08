@@ -6,8 +6,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">  	
         <meta name="viewport" content="width=device-width, user-scalable=yes" /><!--user-scalable=yes” sert à indiquer que l’utilisateur peut zoomer sur le contenu-->
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         <title>Nos services</title>
-        <style>
+        <style type="text/css">
+            body{
+                background-color:  #ceffe5;
+            }
             h1{
                 text-align: center;
             }
@@ -16,7 +20,7 @@
             }
         </style>
     </head>
-    <body>
+    <body class="container">
 
         <?php
         session_start();
@@ -25,12 +29,13 @@
 
             <form method="POST" action="login.php">
                 <section class="inscription_formulaire">
-                    <label for="pseudo">Pseudo</label>
-                    <input type="text" name="pseudo"/>
-                    <label for="mdp">Mot de passe</label>
-                    <input type="password" name="mdp"/>
-                    <input type="submit" name="login"/>
-
+                    <div class="form-group">
+                        <label for="pseudo">Pseudo</label>
+                        <input type="text" name="pseudo"/>
+                        <label for="mdp">Mot de passe</label>
+                        <input type="password" name="mdp"/>
+                        <input type="submit" class="btn btn-default" name="login"/>
+                    </div>
             </form>
 
             <a href="register-form.php">S'inscrire</a>
@@ -47,6 +52,7 @@
 
         <h1>De quel service avez-vous besoin ?</h1>
         <form class="recherche" method="POST" action="index.php">
+            <div class="form-group">
             <select name ="ttescategories">
                 <option value="toutescategories" selected="selected">Toutes les catégories</option>
                 <option value="Reparation">Réparation et Dépannage</option>
@@ -57,13 +63,14 @@
             </select>
             <input type="text" placeholder="mot clé"/>
             <input type="text" placeholder="Localisation"/>
-            <input type="submit" value="Rechercher"/>
+            <input type="submit" class="btn btn-default" value="Rechercher"/>
+            </div>
         </form>
 
         <?php
         include_once './Post.php';
         include_once './DataBase.php';
-        
+
         $dossier = 'posts/';
         $files = scandir($dossier);
         foreach ($files as $content) {
@@ -76,7 +83,6 @@
                 echo $instance->affichePost($contenu);
                 echo '</div>';
             }
-            
         }
         ?>
     </body>

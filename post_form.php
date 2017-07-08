@@ -10,9 +10,16 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">  	
         <meta name="viewport" content="width=device-width, user-scalable=yes" /><!--user-scalable=yes” sert à indiquer que l’utilisateur peut zoomer sur le contenu-->
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
         <title></title>
+        <style type="text/css">
+            body{
+               background-color:  #ceffe5;
+            }
+        </style>
     </head>
-    <body>
+    <body class="container">
         <?php
         session_start();
         if (isset($_SESSION['nom'])) {
@@ -25,9 +32,9 @@ and open the template in the editor.
                 <br/>
                 <label for="description">Description</label>
                 <br/>
-                <textarea cols="50" rows="10" name="description">Vous pouvez écrire quelque chose ici</textarea>
+                <textarea cols="50" rows="10" name="description" required="required">Vous pouvez écrire quelque chose ici</textarea>
                 <br/>
-                <select name="categories">
+                <select name="categories" required="required">
                     <option value="toutescategories" selected="selected">Toutes les catégories</option>
                     <option value="Reparation">Réparation et Dépannage</option>
                     <option value="Mode">Mode et Bien-être</option>

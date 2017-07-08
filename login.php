@@ -1,5 +1,6 @@
-<?php
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
+<?php
 include_once './User.php';
 include_once './DataBase.php';
 $instance = new DataBase();
@@ -11,7 +12,7 @@ if (isset($_POST['pseudo']) && (isset($_POST['mdp']))) {
     if (is_file('utilisateur/' . $pseudo . '.txt')) {
         $contenu = unserialize(file_get_contents('utilisateur/' . $pseudo . '.txt'));
         $mdp_data = $contenu->getMdp();
-        
+
         if ($mdp_data == $mdp) {
             session_start();
             $_SESSION['nom'] = $pseudo;
