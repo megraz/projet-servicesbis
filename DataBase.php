@@ -124,6 +124,7 @@ class DataBase {
         $db->setAttribute(db::ATTR_DEFAULT_FETCH_MODE, db::FETCH_OBJ);
     }
 
+    //pour parcourir les utilisateurs
     public function listeUser(): array {
         $dossier = './utilisateur/';
         $files = scandir($dossier);
@@ -136,6 +137,7 @@ class DataBase {
         return $listeUser;
     }
 
+    // pour parcourir les posts
     public function listePosts(): array {
         $dossier = './posts/';
         $files = scandir($dossier);
@@ -146,6 +148,22 @@ class DataBase {
             }
         }
         return $listePosts;
+    }
+
+    //modifier un article
+    public function modifierPost(Post $post, $ancienTitre) {
+        unlink('posts/' . $ancienTitre . '.txt');
+        $postdata = serialize($post);
+         //On remplace le contenu du fichier comme on avait fait pour la création de celui ci
+        $fichier = fopen('posts/' . $post->getTitre() . '.txt', 'w');
+        fwrite($fichier, $postdata);
+        fclose($fichier);
+    }
+
+    //suprimer un post
+    public function suprimerPost($post) {
+        //On supprime le fichier
+        unlink('posts/' . $post . '.txt');
     }
 
 }

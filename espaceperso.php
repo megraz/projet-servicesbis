@@ -4,7 +4,20 @@
     <head>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-        <title></title>
+        <title>Mon espace personnel</title>
+
+        <style type="text/css">
+            body{
+                background-color:  #d5dac1;
+                margin-top: 20px;
+                margin-left: 80px;
+            }
+            h2{
+                color: #3795b6; /*#3795b6 #5da5db #7784a1 #69bbf9*/
+                text-align: center;
+            }
+        </style>
+
     </head>
     <body>
         <h2>Mon Espace Personnel</h2>
@@ -47,12 +60,19 @@
             $author = $annonce->getAuthor();
             if ($author == $user) {
                 echo $instance->affichePost($annonce);
-                /*
-                  echo'
+
+                echo'
+                  <div class="boutons">
                   <form method="POST" action="delete.php">
-                  <input type="hidden" name="fichier" ' . 'value="' . $annonce->getTitle . '"/>
-                  <input type="submit" value="supprimer">
-                  </form>'; */
+                  <input type="hidden" name="fichier" ' . 'value="' . $annonce->getTitle() . '"class="text">
+                  <input type="submit" value="Supprimer">
+                  </form>
+                  
+                  <form method="POST" action="edit_form.php">
+                  <input type="hidden" name="fichier" ' . 'value="' . $annonce->getTitle() . '">
+                  <input type="submit" value="Modifier">
+                  </form>
+                  </div>';
             }
         }
         ?>

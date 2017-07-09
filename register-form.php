@@ -43,54 +43,64 @@
         <!--<link rel="stylesheet" href="css/style.css" />-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         <title>Formulaire inscription</title>
+
         <style type="text/css">
-        body{
-        background-color:  #ceffe5;
-        }
-    </style>
-
-</head>
-<body class="container">
-    <h1>INSCRIPTION</h1>
-    <form action="register.php" method="POST" enctype="multipart/form-data">
-        <section class="form_inscrip">
-            <label for="pseudo">Pseudo</label>
-            <input type="text" name ="pseudo" required="required"/>
-            <br/>
-            <label for="mdp">Mot de passe</label>
-            <input type="password" name="mdp" required="required"/>
-            <br/>
-            <!--required, pour les champs à saisie obligatoire-->
-            <label for="nom">Nom</label>
-            <input type="text"  name="nom" placeholder="nom" required="required"/> <!--Le Placeholder a pour but de décrire brièvement un champs. Sa valeur s’affiche à l’intérieur du champs lorsque celui-ci est vide-->
-            <br/>
-            <label for="prenom">Prenom</label>
-            <input type="text" name="prenom" placeholder="prenom" required="required"/>
-            <br/>
-            <label for="mail">Mail</label>
-            <input type="email"  name="mail" placeholder="sophie@example.com" size="32" minlength="3" maxlength="64" required="required">
-            <br/>
-
-            <?php
-            if (!empty($userinfo['avatar'])) {
-                ?>
-                <img src="./avatars/<?php echo $userinfo['avatar']; ?>" width="150" />
-                <?php
+            body{
+                background-color:  #d5dac1;
             }
-            ?>
+            h1{
+                color: #3ea6cb; /*#3795b6 #5da5db #7784a1 #69bbf9*/
+            }
+        </style>
 
-            <label for="avatar">Avatar</label>
-            <input type="file" name="avatar" required="required"/>
-            <br/>
-            <label for="genre">Genre</label>
-            <div><input type="radio" name="genre" value="feminin" required="required"/>Féminin
-                <input type="radio" name="genre" value="masculin" required="required"/>Masculin</div>
-            <label for="age">Age</label>
-            <input type="number" name="age"/>
-            <br/>
-            <input type="submit" name="inscription" value="Valider" />
-        </section>
+    </head>
+    <body class="container">
+        <h1>INSCRIPTION</h1>
+        <form action="register.php" method="POST" enctype="multipart/form-data">
+            <section class="form_inscrip">
+                <label for="pseudo">Pseudo</label>
+                <input type="text" name ="pseudo" required="required"/>
+                <br/>
+                <br/>
+                <label for="mdp">Mot de passe</label>
+                <input type="password" name="mdp" required="required"/>
+                <br/>
+                <br/>
+                <!--required, pour les champs à saisie obligatoire-->
+                <label for="nom">Nom</label>
+                <input type="text"  name="nom" placeholder="nom" required="required"/> <!--Le Placeholder a pour but de décrire brièvement un champs. Sa valeur s’affiche à l’intérieur du champs lorsque celui-ci est vide-->
+                <br/>
+                <br/>
+                <label for="prenom">Prenom</label>
+                <input type="text" name="prenom" placeholder="prenom" required="required"/>
+                <br/>
+                <br/>
+                <label for="mail">Mail</label>
+                <input type="email"  name="mail" placeholder="sophie@example.com" size="32" minlength="3" maxlength="64" required="required">
+                <br/>
+                <br/>
 
-    </form>
-</body>
+                <?php
+                if (!empty($userinfo['avatar'])) {
+                    ?>
+                    <img src="./avatars/<?php echo $userinfo['avatar']; ?>" width="150" />
+                    <?php
+                }
+                ?>
+
+                <label for="avatar">Avatar</label>
+                <input type="file" name="avatar" required="required"/>
+                <br/>
+                <label for="genre">Genre</label>
+                <div><input type="radio" name="genre" value="feminin" required="required"/>Féminin
+                    <input type="radio" name="genre" value="masculin" required="required"/>Masculin</div>
+                <label for="age">Age</label>
+                <input type="number" name="age"/>
+                <br/>
+                <br/>
+                <input type="submit" name="inscription" class="btn btn-primary" value="Valider" />
+            </section>
+
+        </form>
+    </body>
 </html>

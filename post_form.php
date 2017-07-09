@@ -13,11 +13,14 @@ and open the template in the editor.
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
         <title></title>
+
         <style type="text/css">
             body{
-               background-color:  #ceffe5;
+                background-color: #d5dac1; /*#ceffe5*/
+                margin-top: 20px;
             }
         </style>
+
     </head>
     <body class="container">
         <?php
@@ -30,9 +33,11 @@ and open the template in the editor.
                 <label for="title">Titre</label>
                 <input type="text" name="title" required="required"/>
                 <br/>
+                <br/>
                 <label for="description">Description</label>
                 <br/>
                 <textarea cols="50" rows="10" name="description" required="required">Vous pouvez écrire quelque chose ici</textarea>
+                <br/>
                 <br/>
                 <select name="categories" required="required">
                     <option value="toutescategories" selected="selected">Toutes les catégories</option>
@@ -43,13 +48,16 @@ and open the template in the editor.
                     <option value="Babysitting">Babysitting</option>
                 </select>
                 </br>
+                <br/>
                 <label for="price">Prix</label>
                 <input type="number" name="price" required="required"/> €
+                <br/>
                 <br/>
                 <label for="photo">Photo</label>
                 <input type="file"name="photo" required="required"/>
                 <br/>
-                <input type="submit" value="Envoyer" name="newpost"/>
+                <br/>
+                <input type="submit" class="btn btn-primary" value="Envoyer" name="newpost"/>
             </form>
 
             <?php
@@ -61,12 +69,13 @@ and open the template in the editor.
                 <input type="text" name="pseudo"/>
                 <label for="mdp">Mot de passe</label>
                 <input type="password" name="mdp"/>
-                <input type="submit" name="login"/>
+                <input type="submit" class="btn btn-success" name="login"/>
             </form>
             <a href="register-form.php">S'inscrire</a>
             <?php
         }
         ?>
+        <br/>
         <a href="index.php">Retour</a>
     </body>
 </html>

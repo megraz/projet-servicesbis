@@ -1,4 +1,14 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<style type="text/css">
+    body{
+        background-color:  #d5dac1;
+        margin-top: 20px;
+        margin-left: 80px;
+    }
+    a {
+        margin-left: 15px;
+    }
+</style>
 
 <?php
 include_once './User.php';
