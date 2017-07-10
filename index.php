@@ -45,7 +45,7 @@
                 <li data-target="#my_carousel" data-slide-to="2"></li>
             </ol>
             <!-- Slides -->
-            <div class="carousel-inner"><!--Les images,le contenu HTML (texte, titre, boutons…) sont désignés par la classe .carousel-inner-->
+            <div class="carousel-inner" role="listbox"><!--Les images,le contenu HTML (texte, titre, boutons…) sont désignés par la classe .carousel-inner-->
                 <!-- Page 1 -->
                 <div class="item active">  
                     <div class="carousel-page">
@@ -111,7 +111,7 @@
         <form class="recherche" method="POST" action="index.php">
             <div class="form-group">
                 <select name ="ttescategories">
-                    <option value="toutescategories" selected="selected">Toutes les catégories</option>
+                    <option value="toutescategories" class="btn btn-default btn-xs" selected="selected">Toutes les catégories</option>
                     <option value="Reparation">Réparation et Dépannage</option>
                     <option value="Mode">Mode et Bien-être</option>
                     <option value="Information">Information et conseils</option>
@@ -142,18 +142,19 @@
             }
         }
         ?>
-
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <!-- Le javascript-->
         <!-- Placed at the end of the document so the pages load faster -->
-        <script type="text/javascript" src="js/jquery-1.12.3.min.js"></script>
-        <script type="text/javascript" src="js/bootstrap.min.js"></script>
-        <!--<script type="text/javascript">
+        <!--<script type="text/javascript" src="js/jquery-1.12.3.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>-->
+        <script type="text/javascript">
             $(document).ready(function(){
             $('#myCarousel').carousel({
                 interval: 2000,
                 cycle: true
             });
-             });-->
-        </script>
-    </body>
+             });
+    </script>
+</body>
 </html>

@@ -94,6 +94,7 @@
                 <label for="genre">Genre</label>
                 <div><input type="radio" name="genre" value="feminin" required="required"/>Féminin
                     <input type="radio" name="genre" value="masculin" required="required"/>Masculin</div>
+                <br/>
                 <label for="age">Age</label>
                 <input type="number" name="age"/>
                 <br/>

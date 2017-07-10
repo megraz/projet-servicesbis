@@ -11,8 +11,8 @@
         include_once './DataBase.php';
         include_once './User.php';
         include_once './Post.php';
-        $instance = new DataBase();
         
+        $instance = new DataBase();
         if (isset($_POST['filename'])) {
             $file = htmlspecialchars($_POST['filename']);
             $post = $instance->lirePost($file);

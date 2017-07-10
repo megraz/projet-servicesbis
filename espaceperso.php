@@ -64,12 +64,12 @@
                 echo'
                   <div class="boutons">
                   <form method="POST" action="delete.php">
-                  <input type="hidden" name="fichier" ' . 'value="' . $annonce->getTitle() . '"class="text">
+                  <input type="hidden" name="filename" ' . 'value="' . $annonce->getTitle() . '"class="text">
                   <input type="submit" value="Supprimer">
                   </form>
                   
                   <form method="POST" action="edit_form.php">
-                  <input type="hidden" name="fichier" ' . 'value="' . $annonce->getTitle() . '">
+                  <input type="hidden" name="filename" value="' . $annonce->getTitle() . '">
                   <input type="submit" value="Modifier">
                   </form>
                   </div>';
