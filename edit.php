@@ -10,10 +10,10 @@ if (isset($_POST['editpost'])) {
     if (isset($_SESSION['nom'])) {
         $user = $_SESSION['nom'];
         if (is_file('utilisateur/' . $user . '.txt')) {
-            $ancienTitre = htmlspecialchars($_POST['ancienTitre']);
+            $previoustitle = htmlspecialchars($_POST['previoustitle']);
             $author = $newpost->readUser($user);
             $post = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
-            $newpost->updatePost(new Post($post['title'], $post['photo'], $post['description'], $post['price'], $author), $ancienTitre);
+            $newpost->updatePost(new Post($post['title'], $post['photo'], $post['description'], $post['price'], $author), $previoustitle);
             header("location: espaceperso.php");
         }
     }

@@ -7,11 +7,10 @@
     </head>
     <body>
         <?php
-        
         include_once './DataBase.php';
         include_once './User.php';
         include_once './Post.php';
-        
+
         $instance = new DataBase();
         if (isset($_POST['filename'])) {
             $file = htmlspecialchars($_POST['filename']);
@@ -30,11 +29,10 @@
                     <label for="price">Prix</label>
                     <input type="number" name="price" value="' . $price . '"/> €
                     <label for="photo">Photo</label>
-                    <input type="file" name="photo"/>
+                    <input type="file"name="photo"/>
                     <input type="submit" value="Envoyer" name="editpost"/>
                 </form>';
         }
-        
         ?>
     </body>
 </html>

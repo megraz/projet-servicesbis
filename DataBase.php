@@ -151,13 +151,24 @@ class DataBase {
     }
 
     //modifier un article
-    public function modifierPost(Post $post, $ancienTitre) {
-        unlink('posts/' . $ancienTitre . '.txt');
+    public function modifierPost(Post $post, $previousTitle) {
+        unlink('posts/' . $previousTitle . '.txt');
         $postdata = serialize($post);
-         //On remplace le contenu du fichier comme on avait fait pour la création de celui ci
-        $fichier = fopen('posts/' . $post->getTitre() . '.txt', 'w');
+        //On remplace le contenu du fichier comme on avait fait pour la création de celui ci
+        $fichier = fopen('posts/' . $post->getTitle() . '.txt', 'w');
         fwrite($fichier, $postdata);
         fclose($fichier);
+    }
+
+    //unserialize user
+    public function readUser($user): User {
+        return unserialize(file_get_contents('utilisateur/' . $user . '.txt'));
+    }
+
+    //unserialize annonce
+    public function lirePost($titre): Post {
+        $post = unserialize(file_get_contents('posts/' . $titre . '.txt'));
+        return $post;
     }
 
     //suprimer un post

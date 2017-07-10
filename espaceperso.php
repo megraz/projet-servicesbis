@@ -11,6 +11,7 @@
                 background-color:  #d5dac1;
                 margin-top: 20px;
                 margin-left: 80px;
+                margin-right: 80px;
             }
             h2{
                 color: #3795b6; /*#3795b6 #5da5db #7784a1 #69bbf9*/

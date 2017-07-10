@@ -31,7 +31,6 @@
                 background-color:#5f666d;
                 color:white;
             }
-
         </style>
 
     </head>
@@ -83,9 +82,8 @@
         session_start();
         if (!isset($_SESSION['nom'])) {
             ?>
-
-            <form method="POST" action="login.php">
-                <section class="inscription_formulaire">
+            <section class="inscription_formulaire">
+                <form method="POST" action="login.php">
                     <div class="form-group">
                         <label for="pseudo">Pseudo</label>
                         <input type="text" name="pseudo"/>
@@ -93,17 +91,17 @@
                         <input type="password" name="mdp"/>
                         <input type="submit" class="btn btn-success" name="login"/>
                     </div>
-            </form>
-
-            <a href="register-form.php">S'inscrire</a>
-            <a href="post_form.php">Poster une annonce</a>
+                </form>
+                <a class="btn btn-warning" href="register-form.php">S'inscrire</a>
+                <a class="btn btn-primary" href="post_form.php">Poster une annonce</a>
+            </section>
 
             <?php
         } else {
             echo 'Bonjour ' . $_SESSION['nom'];
             echo '<form action="logout.php" method="POST"><button>Se déconnecter</button></form>';
-            echo '<a href="espaceperso.php">Espace personnel</a><br/>';
-            echo '<a href="post_form.php">Poster une annonce</a>';
+            echo '<a href="espaceperso.php"><button style="color:#27e092">Espace personnel</button></a><br/>';
+            echo '<a href="post_form.php"><button style="color:#00145c">Poster une annonce</button></a>';
         }
         ?>
 
@@ -149,12 +147,12 @@
         <!--<script type="text/javascript" src="js/jquery-1.12.3.min.js"></script>
         <script type="text/javascript" src="js/bootstrap.min.js"></script>-->
         <script type="text/javascript">
-            $(document).ready(function(){
-            $('#myCarousel').carousel({
-                interval: 2000,
-                cycle: true
+            $(document).ready(function () {
+                $('#myCarousel').carousel({
+                    interval: 2000,
+                    cycle: true
+                });
             });
-             });
-    </script>
-</body>
+        </script>
+    </body>
 </html>
