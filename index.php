@@ -95,16 +95,16 @@
                 <a class="btn btn-warning" href="register-form.php">S'inscrire</a>
                 <a class="btn btn-primary" href="post_form.php">Poster une annonce</a>
             </section>
-
-            <?php
-        } else {
-            echo 'Bonjour ' . $_SESSION['nom'];
-            echo '<form action="logout.php" method="POST"><button>Se déconnecter</button></form>';
-            echo '<a href="espaceperso.php"><button style="color:#27e092">Espace personnel</button></a><br/>';
-            echo '<a href="post_form.php"><button style="color:#00145c">Poster une annonce</button></a>';
-        }
-        ?>
-
+            <div class="row">
+                <?php
+            } else {
+                echo '<div class="accueil" style="font-size: 20px">Bonjour ' . $_SESSION['nom'];
+                echo '</div><div class="row"><div class="col-sm-4"><form action="logout.php" method="POST"><button class="btn btn-danger">Se déconnecter</button></form></div>';
+                echo '<div class="col-sm-4" style="text-align:right"><a href="espaceperso.php"><button style="color:#27e092">Espace personnel</button></a><br/></div>';
+                echo '<div class="col-sm-4" style="text-align:right"><a href="post_form.php"><button style="color:#00145c">Poster une annonce</button></a></div></div>';
+            }
+            ?>
+        </div>
         <h1>De quel service avez-vous besoin ?</h1>
         <form class="recherche" method="POST" action="index.php">
             <div class="form-group">
