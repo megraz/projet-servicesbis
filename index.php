@@ -101,7 +101,7 @@
                 echo '<div class="accueil" style="font-size: 20px">Bonjour ' . $_SESSION['nom'];
                 echo '</div><div class="row"><div class="col-sm-4"><form action="logout.php" method="POST"><button class="btn btn-danger">Se déconnecter</button></form></div>';
                 echo '<div class="col-sm-4" style="text-align:right"><a href="espaceperso.php"><button style="color:#27e092">Espace personnel</button></a><br/></div>';
-                echo '<div class="col-sm-4" style="text-align:right"><a href="post_form.php"><button style="color:#00145c">Poster une annonce</button></a></div></div>';
+                echo '<div class="col-sm-4" style="text-align:right"><a href="post_form.php"><button class="btn btn-primary">Poster une annonce</button></a></div></div>';
             }
             ?>
         </div>

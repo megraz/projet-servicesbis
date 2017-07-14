@@ -166,8 +166,8 @@ class DataBase {
     }
 
     //unserialize annonce
-    public function lirePost($titre): Post {
-        $post = unserialize(file_get_contents('posts/' . $titre . '.txt'));
+    public function readPost($title): Post {
+        $post = unserialize(file_get_contents('posts/' . $title . '.txt'));
         return $post;
     }
 

@@ -16,6 +16,7 @@
             h2{
                 color: #3795b6; /*#3795b6 #5da5db #7784a1 #69bbf9*/
                 text-align: center;
+                margin-bottom: 50px;
             }
         </style>
 
@@ -37,8 +38,8 @@
                 $instance = new DataBase;
                 echo $instance->afficheUser($contenu);
                 echo '<a href="post_form.php"><button>Créer une nouvelle annonce</button></a><br/>';
-                echo '<form action="logout.php" method="POST"><button>Se déconnecter</button></form>';
-                echo '<a href="index.php">Retour</a>';
+                echo '<br/><form action="logout.php" method="POST"><button class="btn btn-danger">Se déconnecter</button></form>';
+                echo '<br/><a href="index.php">Retour</a>';
             }
         } else {
             echo'
@@ -66,12 +67,13 @@
                   <div class="boutons">
                   <form method="POST" action="delete.php">
                   <input type="hidden" name="filename" ' . 'value="' . $annonce->getTitle() . '"class="text">
-                  <input type="submit" value="Supprimer">
+                  <span class="glyphicon glyphicon-trash"></span> 
+                  <input class="btn btn-danger" type="submit" value="Supprimer">
                   </form>
                   
                   <form method="POST" action="edit_form.php">
                   <input type="hidden" name="filename" value="' . $annonce->getTitle() . '">
-                  <input type="submit" value="Modifier">
+                  <br/><input class="btn btn-default" type="submit" value="Modifier">
                   </form>
                   </div>';
             }

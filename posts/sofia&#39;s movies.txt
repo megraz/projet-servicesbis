@@ -1,8 +1,0 @@
-O:4:"Post":7:{s:5:"title";s:18:"sofia&#39;s movies";s:9:"categorie";N;s:5:"photo";s:5:"a.jpg";s:4:"date";O:8:"DateTime":3:{s:4:"date";s:26:"2017-06-29 10:41:13.000000";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Berlin";}s:11:"description";s:200:"
-    1999 : Virgin Suicides (The Virgin suicides)
-    2003 : Lost in Translation
-    2006 : Marie-Antoinette
-    2010 : Somewhere
-    2013 : The Bling Ring
-    2017 : Les Proies (The Beguiled)
-";s:12:"localisation";N;s:5:"price";s:2:"10";}

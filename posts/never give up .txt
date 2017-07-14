@@ -1,2 +1,0 @@
-O:4:"Post":8:{s:5:"title";s:14:"never give up ";s:9:"categorie";s:11:"Information";s:5:"photo";s:5:"a.jpg";s:4:"date";O:8:"DateTime":3:{s:4:"date";s:26:"2017-07-06 13:59:10.000000";s:13:"timezone_type";i:3;s:8:"timezone";s:13:"Europe/Berlin";}s:11:"description";s:42:"ujhezuhyouhez huhez oijh zeh 
-hnzeuyijhzh";s:12:"localisation";N;s:5:"price";s:2:"10";s:6:"author";N;}

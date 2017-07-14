@@ -14,7 +14,7 @@
         $instance = new DataBase();
         if (isset($_POST['filename'])) {
             $file = htmlspecialchars($_POST['filename']);
-            $post = $instance->lirePost($file);
+            $post = $instance->readPost($file);
             $title = $post->getTitle();
             $description = $post->getDescription();
             $price = $post->getPrice();
