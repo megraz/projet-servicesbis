@@ -18,6 +18,20 @@
                 text-align: center;
                 margin-bottom: 50px;
             }
+            .btn-default
+            {
+                color: #222222;
+                border-color: #222222;
+            }
+            .btn-outline 
+            {
+                background-color: transparent;
+                color: inherit;
+                border-width: 2px;
+                -webkit-transition: all 0.75s;
+                -moz-transition: all 0.75s;
+                transition: all 0.75s;
+            }
         </style>
 
     </head>
@@ -66,16 +80,16 @@
                 echo'
                   <div class="boutons">
                   <form method="POST" action="delete.php">
-                  <input type="hidden" name="filename" ' . 'value="' . $annonce->getTitle() . '"class="text">
+                  <br/><input type="hidden" name="filename" ' . 'value="' . $annonce->getTitle() . '"class="text">
                   <span class="glyphicon glyphicon-trash"></span> 
-                  <input class="btn btn-danger" type="submit" value="Supprimer">
+                  <input class="btn btn-default btn-outline" type="submit" value="Supprimer">
                   </form>
                   
                   <form method="POST" action="edit_form.php">
                   <input type="hidden" name="filename" value="' . $annonce->getTitle() . '">
-                  <br/><input class="btn btn-default" type="submit" value="Modifier">
+                  <br/><input class="btn btn-success btn-outline" type="submit" value="Modifier">
                   </form>
-                  </div>';
+                  </div><br/>';
             }
         }
         ?>
