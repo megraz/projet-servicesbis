@@ -71,7 +71,7 @@ and open the template in the editor.
                 <input type="password" name="mdp"/>
                 <input type="submit" class="btn btn-success" name="login"/>
             </form>
-            <a href="register-form.php">S'inscrire</a>
+        <br/><a class="btn btn-warning" href="register-form.php">S'inscrire</a><br/>
             <?php
         }
         ?>
