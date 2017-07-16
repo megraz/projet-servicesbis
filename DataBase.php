@@ -112,17 +112,17 @@ class DataBase {
                 $post->getPhoto() . '"></pre><pre>' .
                 $post->getDescription() . '</pre><pre>' .
                 $post->getPrice() . '€</pre><pre>' .
-                //$post->getDate()->format('d/m/y H:i') . '</pre>';
-                $post->getCategorie() . '</pre><pre>' .
-                $post->getAuthor() . '</pre>';
+                $post->getDate()->format('d/m/y H:i') . '</pre><pre>Auteur : '.
+                $post->getAuthor() . '</pre><pre>Catégorie :' .
+                $post->getCategorie() . '</pre>';
     }
 
-    //afficher photo Avatar
+    /*afficher photo Avatar
     public function afficheAvatar() {
         $db = new DataBase('mysql:dbname=site;host=localhost', 'root', '');
         $db->setAttribute(db::ATTR_ERRMODE, db::ERRMODE_EXCEPTION);
         $db->setAttribute(db::ATTR_DEFAULT_FETCH_MODE, db::FETCH_OBJ);
-    }
+    }*/
 
     //pour parcourir les utilisateurs
     public function listeUser(): array {

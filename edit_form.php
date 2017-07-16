@@ -35,14 +35,14 @@
                 <form action="edit.php" method="POST">
                     <label for="title">Titre</label>
                     <input type="text" name="title" value="' . $title . '"/>
-                    <br/><input type="hidden" name="ancienTitre" value="' . $title . '"/><br/>
+                    <br/><input type="hidden" name="previoustitle" value="' . $title . '"/><br/>
                     <label for="description">Description</label><br/>
                     <textarea cols="50" rows="10" name="description" >' . $description . '</textarea><br/>
                     <br/><label for="price">Prix</label>
                     <input type="number" name="price" value="' . $price . '"/> €
                     <br/><br/>
                     <label for="photo">Photo</label>
-                    <input type="file"name="photo"/><br/>
+                    <input type="file" name="photo"/><br/>
                     <br/><input type="submit" class="btn btn-primary" value="Envoyer" name="editpost"/>
                 </form>';
         }

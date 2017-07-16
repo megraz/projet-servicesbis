@@ -5,7 +5,9 @@ include_once './Post.php';
 include_once './User.php';
 
 $newpost = new DataBase();
+
 if (isset($_POST['editpost'])) {
+    
     session_start();
     if (isset($_SESSION['nom'])) {
         $user = $_SESSION['nom'];

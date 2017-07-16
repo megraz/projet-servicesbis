@@ -1,15 +1,13 @@
 <!DOCTYPE html>
-
 <?php
-/*
-  echo "<pre>";
+
+  /*echo "<pre>";
   print_r($_SESSION); //print_r — Affiche des informations lisibles pour une variable
   echo "</pre>";
- * 
 
   include_once './DataBase.php';
 
-  if (isset($_FILES['avatar']) and ! empty($FILES['avatar']['name'])) {
+  if (isset($_FILES['avatar']) and !empty($FILES['avatar']['name'])) {
   $tailleMax = 2097152; //on fixe la taille max à 2 Mo
   $extensionsValides = array('jpg', 'jpeg', 'gif', 'png');
 
