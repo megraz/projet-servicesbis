@@ -39,12 +39,12 @@
                     $post = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
                     $newUser = unserialize(file_get_contents('utilisateur/' . $user . '.txt'));
                     //var_dump($newUser);
-                    $instance->createPost(new Post($post['title'], $post['photo'], $post['description'], $post['price'], $post['categories'], $newUser));
-                    $newpostdata = unserialize(file_get_contents('posts/' . $post['title'] . '.txt'));
-                    echo $instance->affichePost($newpostdata);
+                    $instance->createPost(new Post($post['title'], $post['photo'], $post['description'], $post['price'],$contenu, $post['categories'], $post['localisation']));//$newUser
+                    //$newpostdata = unserialize(file_get_contents('posts/' . $post['title'] . '.txt'));
+                    //echo $instance->affichePost($newpostdata);
 
                     //$instance->createPost(new Post($post['title'], $post['photo'], $post['description'], $post['price'], $contenu, $post['categories']));
-                    //header("location:index.php"); // On redirige le visiteur vers la page d'accueil
+                    header("location:index.php"); // On redirige le visiteur vers la page d'accueil
                 }
             }
             /*

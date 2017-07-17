@@ -151,8 +151,8 @@ class DataBase {
     }
 
     //modifier un article
-    public function modifierPost(Post $post, $previousTitle) {
-        unlink('posts/' . $previousTitle . '.txt');
+    public function modifierPost(Post $post, $previoustitle) {
+        unlink('posts/' . $previoustitle . '.txt');
         $postdata = serialize($post);
         //On remplace le contenu du fichier comme on avait fait pour la création de celui ci
         $fichier = fopen('posts/' . $post->getTitle() . '.txt', 'w');

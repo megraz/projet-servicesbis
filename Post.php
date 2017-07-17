@@ -11,7 +11,7 @@ public $localisation;
 public $price;
 public $author;
 
-function __construct($title, $photo, $description, $localisation, $price, $categorie, User $author) {
+function __construct($title, $photo, $description, $price, User $author,$categorie, $localisation) {
 $this->title = $title;
 $this->photo = $photo;
 $this->description = $description;
