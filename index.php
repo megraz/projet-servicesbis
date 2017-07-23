@@ -45,7 +45,7 @@
 	background: #5f666d;
 	height: auto;
 	padding-bottom: 30px;
-        padding-left: 140px;
+        /*padding-left: 140px;*/
 	position: relative;
 	width: 100%;
 	border-bottom: 1px solid #CCCCCC;
@@ -252,6 +252,7 @@
         <?php
         include_once './Post.php';
         include_once './DataBase.php';
+        include_once 'User.php';
 
         $dossier = 'posts/';
         $files = scandir($dossier);

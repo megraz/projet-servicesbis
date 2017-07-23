@@ -68,7 +68,9 @@
  */
 
 class DataBase {
-
+    
+    //CREATE
+    //
     //creer un nouvel utilisateur
     public function createUser(User $user) {
         // On verifie si le dossier utilisateur existe dêjà 
@@ -77,24 +79,13 @@ class DataBase {
             mkdir('utilisateur');
         }
         $userdata = serialize($user);
-        //On crée un nouveau fichier pour l'utilisateu
+        //On crée un nouveau fichier pour l'utilisateur
         $file = fopen('utilisateur/' . $user->getPseudo() . '.txt', 'w');
         fwrite($file, $userdata);
         fclose($file);
     }
-
-    //afficher  les infos de l'utilisateur
-    public function afficheUser(User $user) {
-        return '<pre>Pseudo : ' . $user->getPseudo() . '</pre><pre>' .
-                $user->getNom() . '</pre><pre>' .
-                $user->getPrenom() . '</pre><pre>' .
-                $user->getMail() . '</pre><pre>' .
-                $user->getAvatar() . '<img src="</pre><pre>">' .
-                $user->getGenre() . '</pre><pre>' .
-                $user->getAge() . '</pre>' .
-                $user->getDate()->format('d/m/y H:i') . '<pre></pre>';
-    }
-
+    
+    
     //creer un post (une annonce)
     public function createPost(Post $post) {
         if (!is_dir('posts')) {
@@ -105,38 +96,20 @@ class DataBase {
         fwrite($file, $postdata);
         fclose($file);
     }
-
-    //afficher un post
-    public function affichePost(Post $post) {
-        return '</pre><pre><img src="' .
-                $post->getPhoto() . '"></pre><pre>' .
-                $post->getDescription() . '</pre><pre>' .
-                $post->getPrice() . '€</pre><pre>' .
-                $post->getDate()->format('d/m/y H:i') . '</pre><pre>Auteur : '.
-                $post->getAuthor() . '</pre><pre>Catégorie :' .
-                $post->getCategorie() . '</pre>';
+    
+    //READ
+    //
+    //unserialize user
+    public function readUser($user): User {
+        return unserialize(file_get_contents('utilisateur/' . $user . '.txt'));
     }
 
-    /*afficher photo Avatar
-    public function afficheAvatar() {
-        $db = new DataBase('mysql:dbname=site;host=localhost', 'root', '');
-        $db->setAttribute(db::ATTR_ERRMODE, db::ERRMODE_EXCEPTION);
-        $db->setAttribute(db::ATTR_DEFAULT_FETCH_MODE, db::FETCH_OBJ);
-    }*/
-
-    //pour parcourir les utilisateurs
-    public function listeUser(): array {
-        $dossier = './utilisateur/';
-        $files = scandir($dossier);
-        $listeUser = [];
-        foreach ($files as $user) {
-            if (!is_dir($user)) {
-                $listeUser[] = unserialize(file_get_contents($dossier . $user));
-            }
-        }
-        return $listeUser;
+    //unserialize annonce
+    public function readPost($title): Post {
+        $post = unserialize(file_get_contents('posts/' . $title . '.txt'));
+        return $post;
     }
-
+    
     // pour parcourir les posts
     public function listePosts(): array {
         $dossier = './posts/';
@@ -149,7 +122,22 @@ class DataBase {
         }
         return $listePosts;
     }
-
+    
+    //pour parcourir les utilisateurs
+    public function listeUser(): array {
+        $dossier = './utilisateur/';
+        $files = scandir($dossier);
+        $listeUser = [];
+        foreach ($files as $user) {
+            if (!is_dir($user)) {
+                $listeUser[] = unserialize(file_get_contents($dossier . $user));
+            }
+        }
+        return $listeUser;
+    }
+    
+    //UPDATE
+    //
     //modifier un article
     public function modifierPost(Post $post, $previoustitle) {
         unlink('posts/' . $previoustitle . '.txt');
@@ -159,22 +147,47 @@ class DataBase {
         fwrite($fichier, $postdata);
         fclose($fichier);
     }
-
-    //unserialize user
-    public function readUser($user): User {
-        return unserialize(file_get_contents('utilisateur/' . $user . '.txt'));
-    }
-
-    //unserialize annonce
-    public function readPost($title): Post {
-        $post = unserialize(file_get_contents('posts/' . $title . '.txt'));
-        return $post;
-    }
-
+    
+    
+    //DELETE
+    //
     //suprimer un post
     public function suprimerPost($post) {
         //On supprime le fichier
         unlink('posts/' . $post . '.txt');
     }
+    
+    
+    //AFFICHER
+        //afficher un post
+    public function affichePost(Post $post) {
+        return '</pre><pre><img src="' .
+                $post->getPhoto() . '"></pre><pre>' .
+                $post->getDescription() . '</pre><pre>' .
+                $post->getPrice() . '€</pre><pre>' .
+                $post->getDate()->format('d/m/y H:i') . '</pre><pre>Auteur : '.
+                $post->getAuthor() . '</pre><pre>Catégorie :' .
+                $post->getCategorie() . '</pre>';
+    }
+    
+        //afficher  les infos de l'utilisateur
+    public function afficheUser(User $user) {
+        return '<pre>Pseudo : ' . $user->getPseudo() . ' <img src="avatars/avatar5.png" width=32px></pre><pre>Nom : ' .
+                $user->getNom(). '</pre><pre>Prenom : </pre><pre>' .
+                $user->getPrenom() . '</pre><pre>Mail :' .
+                $user->getMail() . '</pre><pre>genre : ' .
+                $user->getGenre() . '</pre><pre>Age :  ' .
+                $user->getAge() . '</pre><pre>Date inscription :  '.
+                $user->getDate()->format('d/m/y H:i') . '</pre>';
+    }
+    
+    /*afficher photo Avatar
+    public function afficheAvatar() {
+        $db = new DataBase('mysql:dbname=site;host=localhost', 'root', '');
+        $db->setAttribute(db::ATTR_ERRMODE, db::ERRMODE_EXCEPTION);
+        $db->setAttribute(db::ATTR_DEFAULT_FETCH_MODE, db::FETCH_OBJ);
+    }*/
 
 }
+
+ 

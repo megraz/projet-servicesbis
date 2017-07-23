@@ -106,5 +106,6 @@ class User {
     function setDate($date) {
         $this->date = $date;
     }
+    
 
 }
