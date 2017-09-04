@@ -11,7 +11,8 @@ include_once './DataBase.php';
 if (isset($_POST['inscription'])) {
     $post = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
     $user = new DataBase();
-    $user->createUser(new User($post['pseudo'], md5($post['mdp']), $post['avatar'], $post['genre'], $post['age']));
+    //$pseudo, $mdp, $nom, $prenom, $mail, $avatar, $genre, $age
+    $user->addUser(new User($post['pseudo'], md5($post['mdp']), $post['nom'], $post['prenom'], $post['mail'], $post['avatar'], $post['genre'], $post['age'], $post['annonces'], $post['date']));
     header("location:index.php");
     session_start();
     $_SESSION['nom'] = $post['pseudo'];

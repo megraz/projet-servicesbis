@@ -14,7 +14,7 @@ class User {
     public $annonces;
     public $date;
 
-    function __construct($pseudo, $mdp, $nom, $prenom, $mail, $avatar, $genre, $age) {
+    function __construct($pseudo, $mdp, $nom, $prenom, $mail, $avatar, $genre, $age, $annonces, $date) {
         $this->pseudo = $pseudo;
         $this->mdp = $mdp;
         $this->nom = $nom;
@@ -24,7 +24,7 @@ class User {
         $this->genre = $genre;
         $this->age = $age;
         $this->date = new DateTime();
-        //$this->annonces = $annonces;
+        $this->annonces = $annonces;
     }
 
     function getPseudo() {

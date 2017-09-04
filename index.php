@@ -252,7 +252,7 @@
         <?php
         include_once './Post.php';
         include_once './DataBase.php';
-        include_once 'User.php';
+        include_once './User.php';
 
         $dossier = 'posts/';
         $files = scandir($dossier);
